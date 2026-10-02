@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Password Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="header">
+      <h1>Password Analyzer</h1>
+      <p>Check the strength of your password instantly.</p>
+    </header>
+
+    <section class="card" aria-labelledby="password-label">
+      <label id="password-label" for="password">Password</label>
+      <div class="field">
+        <!-- Not inside a <form>, so nothing is ever submitted. autocomplete is off so browsers don't save it. -->
+        <input id="password" type="password" autocomplete="off" autocapitalize="off" spellcheck="false"
+               placeholder="Type a password to analyze">
+        <button id="clear" class="icon-btn" type="button" aria-label="Clear password" hidden>Clear</button>
+        <button id="toggle" class="icon-btn" type="button" aria-pressed="false" aria-controls="password">Show</button>
+      </div>
+
+      <div class="meter" aria-hidden="true"><div id="meterFill" class="meter__fill"></div></div>
+      <p class="strength" aria-live="polite">Strength: <strong id="strengthLabel">&mdash;</strong></p>
+
+      <h2 class="section-title">Password requirements</h2>
+      <ul id="rules" class="rules"></ul>
+
+      <div id="result" class="result" aria-live="polite">
+        <strong>Start typing</strong>
+        <span>Your password is checked live, right here in your browser.</span>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Your password never leaves this page. It is not stored, logged or sent to the server.</p>
+      <button id="status" class="status" type="button" data-state="checking">Connecting to server&hellip;</button>
+    </footer>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

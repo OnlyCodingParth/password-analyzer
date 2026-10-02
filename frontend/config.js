@@ -5,7 +5,7 @@
 // 1. Running on your computer  -> uses the local Flask server automatically.
 // 2. Deployed (Vercel/Netlify) -> uses PRODUCTION_API_URL. Replace it with your
 //    Render backend URL after you deploy the backend (no trailing slash).
-const PRODUCTION_API_URL = "https://YOUR-BACKEND-NAME.onrender.com";
+const PRODUCTION_API_URL = "https://password-analyzer-zlyl.onrender.com";
 const LOCAL_API_URL = "http://127.0.0.1:5000";
 
 const isLocal = ["localhost", "127.0.0.1"].includes(window.location.hostname);
